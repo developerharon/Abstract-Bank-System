@@ -1,0 +1,35 @@
+		ABSTRACT BANK SYSTEM
+A bank holds  different types of accounts for its customers:
+- Deposit accounts
+- Loan accounts
+- Morgage accounts
+
+Customers can be:
+- Individuals
+- Companies
+
+All accounts have:
+- A customer
+- Balance
+- Interest rate (monthly based)
+
+Deposit accounts allow:
+ - Depositing money
+ - Withdrawing money
+ - Calculating  interest
+ - No interest if their balance is positive and less than 1000.
+
+Loan accounts allow:
+- Depositing money
+- Calculating interest
+- No interest during the first 3 month if held by an individual
+- No interest during the first 2 months if held by a company
+
+Morgage accounts allow:
+- Depositing money
+- Calculating interest
+- No interest for the first 6 months for individuals
+- 1/2 the interest rate during the first 12 months for companies
+
+General case:
+ - Interest = number_of_months * interest_rate
