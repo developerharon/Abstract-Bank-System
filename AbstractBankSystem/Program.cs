@@ -7,6 +7,7 @@ namespace AbstractBankSystem
         private static void Main(string[] args)
         {
             TestBank();
+            TestDeposit();
             //TestLoanAccounts();
             //TestMortgageAccounts();
             //TestDepositAccounts();
@@ -45,6 +46,16 @@ namespace AbstractBankSystem
             worldBank.Accounts.Add(natLivAccount);
 
             Console.WriteLine(worldBank);
+        }
+
+        private static void TestDeposit()
+        {
+            Customer haron = new Individual("Haron", "Kipkorir");
+
+            Account haronAccount = new LoanAccount(haron, 1200, 1.2f);
+            Console.WriteLine("Haron balance before deposit: {0}", haronAccount.Balance);
+            haronAccount.Deposit(500);
+            Console.WriteLine("Haron's balance after deposit: {0}", haronAccount.Balance);
         }
 
         private static void TestCustomer()

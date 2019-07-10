@@ -23,14 +23,14 @@ namespace AbstractBankSystem
             if (this.customer.IsCompany && NumberOfMonths > 2)
             {
                 int monthsOverTwo = NumberOfMonths - 2;
-                interest = monthsOverTwo * this.interestRate;
+                interest = monthsOverTwo * this.InterestRate;
             }
             
             // Individual have no interst for the first three months
             if (!this.customer.IsCompany && NumberOfMonths > 3)
             {
                 int monthsOverThree = NumberOfMonths - 3;
-                interest = monthsOverThree * this.interestRate;
+                interest = monthsOverThree * this.InterestRate;
             }
 
             return interest;
@@ -41,8 +41,8 @@ namespace AbstractBankSystem
             StringBuilder result = new StringBuilder();
             result.AppendLine("Account holders name: " + this.customer.ToString());
             result.AppendLine("Company Account: " + this.customer.IsCompany);
-            result.AppendLine("Account Balance: " + this.balance);
-            result.AppendLine("Interest Rate: " + this.interestRate);
+            result.AppendLine("Account Balance: " + this.Balance);
+            result.AppendLine("Interest Rate: " + this.InterestRate);
             return result.ToString();
         }
     }

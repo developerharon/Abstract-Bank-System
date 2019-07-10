@@ -7,8 +7,8 @@ namespace AbstractBankSystem
     internal abstract class Account
     {
         protected Customer customer;
-        protected double balance;
-        protected float interestRate;
+        public double Balance { get; protected set; }
+        public float InterestRate { get; protected set; }
         public string AccountType { get; protected set; }
 
         public Account(Customer customer, float interestRate) : this(customer, 0.0d, interestRate)
@@ -19,19 +19,20 @@ namespace AbstractBankSystem
         public Account(Customer customer, double balance, float interestRate)
         {
             this.customer = customer;
-            this.balance = balance;
-            this.interestRate = interestRate;
+            this.Balance = balance;
+            this.InterestRate = interestRate;
         }
 
-        public void Deposit(double amount)
-        {
-            this.balance += amount;
-        }
-
-        public abstract double CalculateInterest(int NumberOfMonths);
         public virtual double Withdraw(double amount)
         {
             throw new InvalidOperationException("You cannot withdraw from this account.");
         }
+        public virtual double Deposit(double amount)
+        {
+            this.Balance += amount;
+            return this.Balance;
+        }
+
+        public abstract double CalculateInterest(int NumberOfMonths);
     }
 }

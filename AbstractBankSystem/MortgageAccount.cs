@@ -25,14 +25,14 @@ namespace AbstractBankSystem
                 if (NumberOfMonths > 12)
                 {
                     // If the interest is calculate after 12 months
-                    interest = 12 * 0.5 * this.interestRate;
+                    interest = 12 * 0.5 * this.InterestRate;
                     int monthsOverAYear = NumberOfMonths - 12;
-                    interest += (monthsOverAYear * this.interestRate);
+                    interest += (monthsOverAYear * this.InterestRate);
                     return interest;
                 }
 
                 // If the interest is after less than an year we calculate and half the interest rate
-                interest = NumberOfMonths * 0.5 * this.interestRate;
+                interest = NumberOfMonths * 0.5 * this.InterestRate;
                 return interest;
             }
             else
@@ -42,7 +42,7 @@ namespace AbstractBankSystem
                 if (NumberOfMonths > 6)
                 {
                     int months = NumberOfMonths - 6;
-                    interest = months * this.interestRate;
+                    interest = months * this.InterestRate;
                     return interest;
                 }
             }
@@ -54,8 +54,8 @@ namespace AbstractBankSystem
             StringBuilder result = new StringBuilder();
             result.AppendLine("Account holders name: " + this.customer.ToString());
             result.AppendLine("Company Account: " + this.customer.IsCompany);
-            result.AppendLine("Account Balance: " + this.balance);
-            result.AppendLine("Interest Rate: " + this.interestRate);
+            result.AppendLine("Account Balance: " + this.Balance);
+            result.AppendLine("Interest Rate: " + this.InterestRate);
             return result.ToString();
         }
     }
